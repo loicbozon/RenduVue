@@ -18,4 +18,5 @@ export default {
 
 <style lang="scss">
 @import "./style/NavBar.scss";
+@import "./style/Filter.scss";
 </style>

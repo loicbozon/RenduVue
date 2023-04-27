@@ -1,6 +1,5 @@
 <template>
   <div>
-    <div>Biere</div>
     <FilterForm />
   </div>
 </template>

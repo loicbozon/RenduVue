@@ -1,0 +1,50 @@
+.beerName {
+    display: block;
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+ul {
+    list-style: none;
+}
+
+.formContainer {
+    padding: 40px 0 40px 0;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2 {
+    grid-area: 1 / 2 / 2 / 34;
+}
+
+img {
+    max-width: 100px;
+}
+
+
+.parentContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.div1Container {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.div2Container {
+    grid-area: 1 / 2 / 2 / 34;
+}
