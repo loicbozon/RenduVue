@@ -2,38 +2,38 @@
   <div>
     <form class="formContainer">
       <div>
-        <label>ABV: </label>
-        <input
-          type="range"
-          max="60"
-          min="0"
-          v-model="filters.abv_gt"
-          @change="updateFilter"
-        />
-        {{ filters.abv_gt }}
-      </div>
-      <div>
-        <label>IBU:</label>
-        <input
-          type="range"
-          max="1157"
-          min="0"
-          v-model="filters.ibu_gt"
-          @change="updateFilter"
-        />
-        {{ filters.ibu_gt }}
-      </div>
-      <div>
-        <label>EBC:</label>
-        <input
-          type="range"
-          max="600"
-          min="0"
-          v-model="filters.ebc_gt"
-          @change="updateFilter"
-        />
-        {{ filters.ebc_gt }}
-      </div>
+      <label>Degré d'alcool: </label>
+            <input
+              type="range"
+              max="60"
+              min="0"
+              v-model="filters.abv_gt"
+              @change="updateFilter"
+            />
+            {{ filters.abv_gt }}
+          </div>
+          <div>
+            <label>Taux d'amertume:</label>
+            <input
+              type="range"
+              max="1157"
+              min="0"
+              v-model="filters.ibu_gt"
+              @change="updateFilter"
+            />
+            {{ filters.ibu_gt }}
+          </div>
+          <div>
+            <label>Couleur de la biere:</label>
+            <input
+              type="range"
+              max="600"
+              min="0"
+              v-model="filters.ebc_gt"
+              @change="updateFilter"
+            />
+            {{ filters.ebc_gt }}
+          </div>
       <div>
         <label>Food pairing:</label>
         <input
@@ -59,6 +59,7 @@
             <div>Description : {{ beer.description }}</div>
             <div>Brassée la premiere fois le {{ beer.first_brewed }}</div>
             <div>Accompagne bien les plats : {{ beer.food_pairing }}</div>
+            <div>Levure : {{ beer.ingredients.yeast }}</div>
           </div>
         </div>
       </li>

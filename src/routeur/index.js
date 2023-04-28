@@ -7,7 +7,7 @@ const routeur = createRouter({
     history: createWebHistory(),
     routes: [
         { path: '/', name: 'Biere', component: Biere },
-        { path: '/filtrée', name: 'BiereFiltre', component: BiereFiltre }
+        { path: '/filtree', name: 'BiereFiltre', component: BiereFiltre }
     ]
 })
 

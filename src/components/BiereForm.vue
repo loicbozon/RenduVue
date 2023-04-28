@@ -4,7 +4,7 @@
       <div class="parent">
         <div class="div1">
           <div>
-            <label>ABV: </label>
+            <label>Degré d'alcool: </label>
             <input
               type="range"
               max="60"
@@ -15,7 +15,7 @@
             {{ filters.abv_gt }}
           </div>
           <div>
-            <label>IBU:</label>
+            <label>Taux d'amertume:</label>
             <input
               type="range"
               max="1157"
@@ -26,7 +26,7 @@
             {{ filters.ibu_gt }}
           </div>
           <div>
-            <label>EBC:</label>
+            <label>Couleur de la biere:</label>
             <input
               type="range"
               max="600"
@@ -54,7 +54,7 @@
             <label>Levure:</label>
             <input
               type="text"
-              v-model="filters.food_pairing"
+              v-model="filters.yeast"
               @keydown="updateFilter"
             />
           </div>
@@ -67,7 +67,7 @@
         <div class="parent">
           <div class="div1">
             <h2>{{ beer.name }}</h2>
-            <img :src="beerImageURL" alt="Beer Image" />
+            <img :src="beer.image_url" alt="Beer Image" />
           </div>
           <div class="div2">
             <div>volume : {{ beer.volume.value }} {{ beer.volume.unit }}</div>
@@ -100,6 +100,7 @@ export default {
         ibu_gt: 0,
         ebc_gt: 0,
         food_pairing: "",
+        yeast: "",
         name: "",
       },
     };
@@ -123,7 +124,7 @@ export default {
         this.filters.ibu_gt
       }&ebc_gt=${this.filters.ebc_gt}${
         !!this.filters.food_pairing ? "&food=" + this.filters.food_pairing : ""
-      }${!!this.filters.name ? "&beer_name=" + this.filters.name : ""}`;
+      }${!!this.filters.name ? "&beer_name=" + this.filters.name : ""}${!!this.filters.yeast ? "&yeast=" + this.filters.yeast : ""}`;
 
       this.getBeers(filter);
     },
@@ -131,7 +132,6 @@ export default {
       const response = await fetch("https://api.punkapi.com/v2/beers");
       const data = await response.json();
       this.beer = data[0];
-      this.beerImageURL = this.beer.image_url;
     },
   },
 };
